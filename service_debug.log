@@ -1,0 +1,159 @@
+2025-08-05 16:28:07,862 - INFO - Running __init__
+2025-08-05 16:28:07,864 - INFO - Enhanced Power & Shutdown service starting
+2025-08-05 16:28:07,864 - INFO - Starting WebSocketManager
+2025-08-05 16:28:07,864 - INFO - Connecting to WebSocket: wss://15dcmwmsig.execute-api.ap-south-1.amazonaws.com/production/
+2025-08-05 16:28:07,865 - INFO - WebSocket connection thread started
+2025-08-05 16:28:07,866 - INFO - WebSocket manager started successfully
+2025-08-05 16:28:07,869 - INFO - Power monitoring thread started
+2025-08-05 16:28:07,870 - INFO - Power monitor thread running
+2025-08-05 16:28:07,871 - INFO - Keep-alive monitor started - will auto-restart failed components
+2025-08-05 16:28:07,976 - DEBUG - --- request header ---
+2025-08-05 16:28:07,976 - DEBUG - GET /production/ HTTP/1.1
+Upgrade: websocket
+Host: 15dcmwmsig.execute-api.ap-south-1.amazonaws.com
+Origin: https://15dcmwmsig.execute-api.ap-south-1.amazonaws.com
+Sec-WebSocket-Key: ueXUfnj5UI+GaeYMzYLQ1A==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+
+
+2025-08-05 16:28:07,976 - DEBUG - -----------------------
+2025-08-05 16:28:07,977 - DEBUG - --- response header ---
+2025-08-05 16:28:17,609 - DEBUG - HTTP/1.1 101 Switching Protocols
+2025-08-05 16:28:17,609 - DEBUG - Date: Tue, 05 Aug 2025 10:58:15 GMT
+2025-08-05 16:28:17,609 - DEBUG - Connection: upgrade
+2025-08-05 16:28:17,609 - DEBUG - upgrade: websocket
+2025-08-05 16:28:17,610 - DEBUG - sec-websocket-accept: iFAY+YRW9T70ngtMqDrzp8lPiNg=
+2025-08-05 16:28:17,610 - DEBUG - -----------------------
+2025-08-05 16:28:17,610 - INFO - Websocket connected
+2025-08-05 16:28:17,610 - INFO - WebSocket connection opened
+2025-08-05 16:28:17,610 - DEBUG - ++Sent raw: b"\x81\xde@\x82\x15\xa9;\xa0t\xca4\xebz\xc7b\xb85\x8b2\xe7r\xc03\xf6p\xdb\x1f\xe6p\xdf)\xe1p\x8bl\xa27\xc4%\xf1f\xc8'\xe77\x93`\xa0V\xc6.\xecp\xca4\xebz\xc7`\xc7f\xdd!\xe0y\xc03\xeap\xcdb\xae5\x8b$\xe7c\xc0#\xe7J\xc7!\xefp\x8bz\xa27\xde)\xecq\xc67\xf1$\x98b\xff"
+2025-08-05 16:28:17,610 - DEBUG - ++Sent decoded: fin=1 opcode=1 data=b'{"action": "register_device", "message": "Connection Established", "device_name": "windows11"}'
+2025-08-05 16:28:17,611 - INFO - Device registration sent for: windows11
+2025-08-05 16:30:57,622 - DEBUG - Sending ping
+2025-08-05 16:30:57,622 - DEBUG - ++Sent raw: b'\x89\x80\x07E\xcd\x95'
+2025-08-05 16:30:57,622 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:30:57,650 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:30:57,651 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:32:17,629 - DEBUG - Sending ping
+2025-08-05 16:32:17,629 - DEBUG - ++Sent raw: b'\x89\x80>X\x8f\xe0'
+2025-08-05 16:32:17,629 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:32:17,656 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:32:17,656 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:33:37,637 - DEBUG - Sending ping
+2025-08-05 16:33:37,637 - DEBUG - ++Sent raw: b'\x89\x80\xc8!7g'
+2025-08-05 16:33:37,637 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:33:37,663 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:33:37,664 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:34:57,642 - DEBUG - Sending ping
+2025-08-05 16:34:57,642 - DEBUG - ++Sent raw: b'\x89\x80\x1cj\xa3-'
+2025-08-05 16:34:57,642 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:34:57,669 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:34:57,669 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:36:17,653 - DEBUG - Sending ping
+2025-08-05 16:36:17,653 - DEBUG - ++Sent raw: b'\x89\x80\x90_\xd43'
+2025-08-05 16:36:17,653 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:36:17,681 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:36:17,681 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:37:37,663 - DEBUG - Sending ping
+2025-08-05 16:37:37,663 - DEBUG - ++Sent raw: b'\x89\x80\xff\x8e\xab\x0e'
+2025-08-05 16:37:37,663 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:37:37,690 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:37:37,691 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:38:57,668 - DEBUG - Sending ping
+2025-08-05 16:38:57,668 - DEBUG - ++Sent raw: b'\x89\x80\x82l$\n'
+2025-08-05 16:38:57,668 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:38:57,695 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:38:57,695 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:40:17,679 - DEBUG - Sending ping
+2025-08-05 16:40:17,679 - DEBUG - ++Sent raw: b'\x89\x80\x1e\xd1\xb6$'
+2025-08-05 16:40:17,679 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:40:17,706 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:40:17,706 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:41:37,680 - DEBUG - Sending ping
+2025-08-05 16:41:37,680 - DEBUG - ++Sent raw: b'\x89\x80x\xfc:\xb6'
+2025-08-05 16:41:37,680 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:41:37,710 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:41:37,710 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:42:57,685 - DEBUG - Sending ping
+2025-08-05 16:42:57,685 - DEBUG - ++Sent raw: b'\x89\x80P\x9b\xe7\x17'
+2025-08-05 16:42:57,685 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:42:57,715 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:42:57,716 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:44:17,698 - DEBUG - Sending ping
+2025-08-05 16:44:17,698 - DEBUG - ++Sent raw: b'\x89\x80{\xdb\xf9\xd8'
+2025-08-05 16:44:17,698 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:44:17,724 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:44:17,724 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:45:37,706 - DEBUG - Sending ping
+2025-08-05 16:45:37,706 - DEBUG - ++Sent raw: b'\x89\x80\x83\xc7\x8a\x07'
+2025-08-05 16:45:37,706 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:45:37,733 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:45:37,733 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:46:57,714 - DEBUG - Sending ping
+2025-08-05 16:46:57,714 - DEBUG - ++Sent raw: b'\x89\x80\xf5\xef\xf5X'
+2025-08-05 16:46:57,714 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:46:57,743 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:46:57,743 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:48:17,722 - DEBUG - Sending ping
+2025-08-05 16:48:17,722 - DEBUG - ++Sent raw: b'\x89\x80\x8e.\x92a'
+2025-08-05 16:48:17,722 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:48:17,748 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:48:17,748 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:49:37,729 - DEBUG - Sending ping
+2025-08-05 16:49:37,729 - DEBUG - ++Sent raw: b'\x89\x80\xef\x92m\xdb'
+2025-08-05 16:49:37,729 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:49:37,755 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:49:37,755 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:50:57,737 - DEBUG - Sending ping
+2025-08-05 16:50:57,737 - DEBUG - ++Sent raw: b'\x89\x80\x85\x95\x93\x0e'
+2025-08-05 16:50:57,737 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:50:57,764 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:50:57,764 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 16:52:17,743 - DEBUG - Sending ping
+2025-08-05 16:52:17,743 - DEBUG - ++Sent raw: b'\x89\x80e3\xbco'
+2025-08-05 16:52:17,743 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 16:52:19,087 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 16:52:19,087 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 19:14:54,485 - DEBUG - Sending ping
+2025-08-05 19:14:54,486 - DEBUG - ++Sent raw: b'\x89\x80\x8a\x00\xb8\x00'
+2025-08-05 19:14:54,487 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 19:15:02,193 - ERROR - WebSocket error: Connection to remote host was lost.
+2025-08-05 19:15:02,193 - INFO - Connection to remote host was lost. - reconnect
+2025-08-05 19:15:02,782 - DEBUG - Calling dispatcher reconnect [5 frames in stack]
+2025-08-05 19:15:02,784 - INFO - reconnect() - retrying in 5 seconds [6 frames in stack]
+2025-08-05 19:15:08,121 - DEBUG - --- request header ---
+2025-08-05 19:15:08,122 - DEBUG - GET /production/ HTTP/1.1
+Upgrade: websocket
+Host: 15dcmwmsig.execute-api.ap-south-1.amazonaws.com
+Origin: https://15dcmwmsig.execute-api.ap-south-1.amazonaws.com
+Sec-WebSocket-Key: 24S2zJijJ464708Lh8UgvQ==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+
+
+2025-08-05 19:15:08,122 - DEBUG - -----------------------
+2025-08-05 19:15:08,123 - DEBUG - --- response header ---
+2025-08-05 19:15:16,346 - DEBUG - HTTP/1.1 101 Switching Protocols
+2025-08-05 19:15:16,347 - DEBUG - Date: Tue, 05 Aug 2025 13:45:16 GMT
+2025-08-05 19:15:16,347 - DEBUG - Connection: upgrade
+2025-08-05 19:15:16,347 - DEBUG - upgrade: websocket
+2025-08-05 19:15:16,348 - DEBUG - sec-websocket-accept: NjdI3v3kYf+Hv8yNjToItq3yBtk=
+2025-08-05 19:15:16,348 - DEBUG - -----------------------
+2025-08-05 19:15:16,348 - INFO - Websocket connected
+2025-08-05 19:15:16,351 - INFO - WebSocket connection opened
+2025-08-05 19:15:16,351 - DEBUG - ++Sent raw: b'\x81\xde\xa14Z>\xda\x16;]\xd5]5P\x83\x0ez\x1c\xd3Q=W\xd2@?L\xfeP?H\xc8W?\x1c\x8d\x14xS\xc4G)_\xc6Qx\x04\x81\x16\x19Q\xcfZ?]\xd5]5P\x81q)J\xc0V6W\xd2\\?Z\x83\x18z\x1c\xc5Q,W\xc2Q\x05P\xc0Y?\x1c\x9b\x14xI\xc8Z>Q\xd6Gk\x0f\x83I'
+2025-08-05 19:15:16,352 - DEBUG - ++Sent decoded: fin=1 opcode=1 data=b'{"action": "register_device", "message": "Connection Established", "device_name": "windows11"}'
+2025-08-05 19:15:16,352 - INFO - Device registration sent for: windows11
+2025-08-05 19:17:56,362 - DEBUG - Sending ping
+2025-08-05 19:17:56,362 - DEBUG - ++Sent raw: b'\x89\x80\xc7X\xd8\xf0'
+2025-08-05 19:17:56,362 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 19:17:56,469 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 19:17:56,471 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''
+2025-08-05 19:18:57,980 - INFO - Stopping WebSocketManager
+2025-08-05 19:18:57,980 - INFO - Starting disconnect_websocket()
+2025-08-05 19:19:16,369 - DEBUG - Sending ping
+2025-08-05 19:19:16,372 - DEBUG - ++Sent raw: b'\x89\x80\xeb&7Y'
+2025-08-05 19:19:16,372 - DEBUG - ++Sent decoded: fin=1 opcode=9 data=b''
+2025-08-05 19:19:16,403 - DEBUG - ++Rcv raw: b'\x8a\x00'
+2025-08-05 19:19:16,404 - DEBUG - ++Rcv decoded: fin=1 opcode=10 data=b''

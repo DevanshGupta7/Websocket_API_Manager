@@ -1,0 +1,1 @@
+websocket closes before shutting down, sleep. also check if laptop is in sleep it can perform limited tasks.
