@@ -17,14 +17,6 @@ class WebSocketManager:
         
         self.setup_logging()
         
-        choice = int(input("enter: "))
-        if choice == 1:
-            self.start_websocket()
-            
-        choice = int(input("enter: "))
-        if choice == 2:
-            self.stop_websocket()
-        
     def setup_logging(self):
         log_path = os.path.join(script_dir, "websocket_manager.log")
         
@@ -54,8 +46,14 @@ class WebSocketManager:
         self.logger.info("Stopping WebSocketManager")
         
         self.is_running = False
+        
+        self.ws_instance.keep_running = False
             
         self.disconnect_websocket()
+        
+        if self.ws_thread and self.ws_thread.is_alive():
+            self.ws_thread.join(timeout=5)
+            self.logger.info("WebSocket thread stopped")
 
         self.logger.info("WebSocketManager stopped")
             
@@ -78,7 +76,7 @@ class WebSocketManager:
                     on_close=self.on_close
                 )
                 
-                self.ws_thread = threading.Thread(target=lambda: self.ws_instance.run_forever(ping_interval=80, ping_timeout=10, reconnect=5), daemon=True)
+                self.ws_thread = threading.Thread(target=lambda: self.ws_instance.run_forever(ping_interval=80, ping_timeout=10), daemon=True)
                 self.ws_thread.start()
                 
                 self.logger.info("WebSocket connection thread started")
@@ -106,7 +104,7 @@ class WebSocketManager:
                 except Exception as e:
                     self.logger.error(f"Error sending Unregistration message: {e}")
             
-            if self.ws_instance and hasattr(self.ws_instance, "sock") and self.ws_instance.sock and self.ws_instance.sock.connected:
+            if self.ws_instance:
                 self.logger.info("Disconnecting WebSocket...")
                 
                 try:
@@ -168,5 +166,3 @@ class WebSocketManager:
         
     def on_close(self, ws, close_status_code: int, close_msg: str):
         self.logger.info(f"Websocket connection closed: {close_status_code} - {close_msg}")
-        
-WebSocketManager()
