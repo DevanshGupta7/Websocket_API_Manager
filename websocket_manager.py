@@ -88,31 +88,30 @@ class WebSocketManager:
             
     def disconnect_websocket(self):
         self.logger.info("Starting disconnect_websocket()")
-        with self.lock:
-            if self.ws_instance and hasattr(self.ws_instance, "sock") and self.ws_instance.sock and self.ws_instance.sock.connected:
-                self.logger.info("Sending unregister message before disconnecting WebSocket...")
-                
-                unregister_msg = {
-                    "action": "unregister_device",
-                    "message": "Disconnect Connection",
-                    "device_name": self.device_name
-                }
-                
-                try:
-                    self.ws_instance.send(json.dumps(unregister_msg))
-                    self.logger.info(f"Unregistration message send to server for: {self.device_name}")
-                except Exception as e:
-                    self.logger.error(f"Error sending Unregistration message: {e}")
+        if self.ws_instance and hasattr(self.ws_instance, "sock") and self.ws_instance.sock and self.ws_instance.sock.connected:
+            self.logger.info("Sending unregister message before disconnecting WebSocket...")
             
-            if self.ws_instance:
-                self.logger.info("Disconnecting WebSocket...")
-                
-                try:
-                    self.ws_instance.close()
-                    self.logger.info("Websocket Disconnected")
-                    self.ws_instance = None
-                except Exception as e:
-                    self.logger.error(f"Error closing WebSocket: {e}")
+            unregister_msg = {
+                "action": "unregister_device",
+                "message": "Disconnect Connection",
+                "device_name": self.device_name
+            }
+            
+            try:
+                self.ws_instance.send(json.dumps(unregister_msg))
+                self.logger.info(f"Unregistration message send to server for: {self.device_name}")
+            except Exception as e:
+                self.logger.error(f"Error sending Unregistration message: {e}")
+        
+        if self.ws_instance:
+            self.logger.info("Disconnecting WebSocket...")
+            
+            try:
+                self.ws_instance.close()
+                self.logger.info("Websocket Disconnected")
+                self.ws_instance = None
+            except Exception as e:
+                self.logger.error(f"Error closing WebSocket: {e}")
                     
     def is_websocket_connected(self) -> bool:
         with self.lock:
