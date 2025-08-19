@@ -1,0 +1,45 @@
+2025-08-18 14:48:54,616 - INFO - Running __init__
+2025-08-18 14:48:54,621 - INFO - Enhanced Power & Shutdown service starting
+2025-08-18 14:48:54,622 - INFO - Starting WebSocketManager
+2025-08-18 14:48:54,622 - INFO - Connecting to WebSocket: wss://15dcmwmsig.execute-api.ap-south-1.amazonaws.com/production/
+2025-08-18 14:48:54,623 - INFO - WebSocket connection thread started
+2025-08-18 14:48:54,624 - INFO - WebSocket manager started successfully
+2025-08-18 14:48:54,625 - INFO - Power monitoring thread started
+2025-08-18 14:48:54,625 - INFO - Power monitor thread running
+2025-08-18 14:48:54,626 - INFO - Keep-alive monitor started - will auto-restart failed components
+2025-08-18 14:48:54,786 - DEBUG - --- request header ---
+2025-08-18 14:48:54,787 - DEBUG - GET /production/ HTTP/1.1
+Upgrade: websocket
+Host: 15dcmwmsig.execute-api.ap-south-1.amazonaws.com
+Origin: https://15dcmwmsig.execute-api.ap-south-1.amazonaws.com
+Sec-WebSocket-Key: E4/YLsHn3f06ugIdMfBl2g==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+
+
+2025-08-18 14:48:54,787 - DEBUG - -----------------------
+2025-08-18 14:48:54,787 - DEBUG - --- response header ---
+2025-08-18 14:49:03,337 - DEBUG - HTTP/1.1 101 Switching Protocols
+2025-08-18 14:49:03,337 - DEBUG - Date: Mon, 18 Aug 2025 09:19:02 GMT
+2025-08-18 14:49:03,337 - DEBUG - Connection: upgrade
+2025-08-18 14:49:03,337 - DEBUG - upgrade: websocket
+2025-08-18 14:49:03,338 - DEBUG - sec-websocket-accept: ta9jGEKd2zVpQ+2MINQjDvaraH4=
+2025-08-18 14:49:03,338 - DEBUG - -----------------------
+2025-08-18 14:49:03,338 - INFO - Websocket connected
+2025-08-18 14:49:03,339 - INFO - WebSocket connection opened
+2025-08-18 14:49:03,339 - DEBUG - ++Sent raw: b'\x81\xde\xef\xea\x1a\xd7\x94\xc8{\xb4\x9b\x83u\xb9\xcd\xd0:\xf5\x9d\x8f}\xbe\x9c\x9e\x7f\xa5\xb0\x8e\x7f\xa1\x86\x89\x7f\xf5\xc3\xca8\xba\x8a\x99i\xb6\x88\x8f8\xed\xcf\xc8Y\xb8\x81\x84\x7f\xb4\x9b\x83u\xb9\xcf\xafi\xa3\x8e\x88v\xbe\x9c\x82\x7f\xb3\xcd\xc6:\xf5\x8b\x8fl\xbe\x8c\x8fE\xb9\x8e\x87\x7f\xf5\xd5\xca8\xa0\x86\x84~\xb8\x98\x99+\xe6\xcd\x97'
+2025-08-18 14:49:03,339 - DEBUG - ++Sent decoded: fin=1 opcode=1 data=b'{"action": "register_device", "message": "Connection Established", "device_name": "windows11"}'
+2025-08-18 14:49:03,339 - INFO - Device registration sent for: windows11
+2025-08-18 14:49:29,077 - INFO - Stopping WebSocketManager
+2025-08-18 14:49:29,077 - INFO - Starting disconnect_websocket()
+2025-08-18 14:49:29,077 - INFO - Sending unregister message before disconnecting WebSocket...
+2025-08-18 14:49:29,077 - DEBUG - ++Sent raw: b'\x81\xdf5\xdd{\xb0N\xff\x1a\xd3A\xb4\x14\xde\x17\xe7[\x92@\xb3\t\xd5R\xb4\x08\xc4P\xaf$\xd4P\xab\x12\xd3P\xffW\x90\x17\xb0\x1e\xc3F\xbc\x1c\xd5\x17\xe7[\x92q\xb4\x08\xd3Z\xb3\x15\xd5V\xa9[\xf3Z\xb3\x15\xd5V\xa9\x12\xdf[\xffW\x90\x17\xb9\x1e\xc6\\\xbe\x1e\xef[\xbc\x16\xd5\x17\xe7[\x92B\xb4\x15\xd4Z\xaa\x08\x81\x04\xff\x06'
+2025-08-18 14:49:29,078 - DEBUG - ++Sent decoded: fin=1 opcode=1 data=b'{"action": "unregister_device", "message": "Disconnect Connection", "device_name": "windows11"}'
+2025-08-18 14:49:29,078 - INFO - Unregistration message send to server for: windows11
+2025-08-18 14:49:29,078 - INFO - Disconnecting WebSocket...
+2025-08-18 14:49:29,078 - DEBUG - ++Sent raw: b'\x88\x82\xe8\xaa_r\xebB'
+2025-08-18 14:49:29,078 - DEBUG - ++Sent decoded: fin=1 opcode=8 data=b'\x03\xe8'
+2025-08-18 14:49:29,108 - INFO - Websocket connection closed: None - None
+2025-08-18 14:49:29,110 - INFO - Websocket Disconnected
+2025-08-18 14:49:29,110 - INFO - WebSocketManager stopped
+2025-08-18 14:49:34,114 - INFO - Enhanced Power & Shutdown service stopped
