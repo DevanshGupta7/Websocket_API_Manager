@@ -112,6 +112,10 @@ class WebSocketManager:
                 self.ws_instance = None
             except Exception as e:
                 self.logger.error(f"Error closing WebSocket: {e}")
+
+    def ping_pong(self):
+        if self.ws_instance and hasattr(self.ws_instance, "sock") and self.ws_instance.sock and self.ws_instance.sock.connected:
+            pass
                     
     def is_websocket_connected(self) -> bool:
         with self.lock:

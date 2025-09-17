@@ -303,16 +303,23 @@
 # if __name__ == "__main__":
 #     win32serviceutil.HandleCommandLine(EnhancedPowerService)
 
-import zipfile
-import os
+# import zipfile
+# import os
 
-def zip_dir(directory, zip_name):
-    with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as z:
-        for root, _, files in os.walk(directory):
-            for file in files:
-                filepath = os.path.join(root, file)
-                arcname = os.path.relpath(filepath, start=directory)
-                z.write(filepath, os.path.join(os.path.basename(directory), arcname))
+# def zip_dir(directory, zip_name):
+#     with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as z:
+#         for root, _, files in os.walk(directory):
+#             for file in files:
+#                 filepath = os.path.join(root, file)
+#                 arcname = os.path.relpath(filepath, start=directory)
+#                 z.write(filepath, os.path.join(os.path.basename(directory), arcname))
 
-zip_dir("libraries/python", "libraries.zip")
+# zip_dir("libraries/python", "libraries.zip")
 
+import subprocess
+
+subprocess.run([r"C:\Users\devan\AppData\Local\Programs\Python\Python312\python.exe", r"D:\AI_Assistant\face_authentication\face_service.py"],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    stdin=subprocess.DEVNULL,
+                    close_fds=True)

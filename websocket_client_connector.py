@@ -133,11 +133,14 @@ class WebSocketManager:
         self.ws_instance: Optional[websocket.WebSocketApp] = None
         self.ws_thread: Optional[threading.Thread] = None
         self.command_thread: Optional[threading.Thread] = None
+        self.ping_thread: Optional[threading.Thread] = None
         
         self.lock = threading.Lock()
         self.command_queue = queue.Queue()
         
         self.is_running = False
+        self.ping_thread_running = False
+        self.ping_interval = 420
         self.connection_attempts = 0
         self.max_connection_attempts = 5
         self.reconnect_delay = 5
@@ -255,8 +258,11 @@ class WebSocketManager:
                     on_pong=self._on_pong
                 )
                 
-                self.ws_thread = threading.Thread(target=lambda: self.ws_instance.run_forever(ping_interval=80, ping_timeout=10, reconnect=5), daemon=True)
+                self.ws_thread = threading.Thread(target=self.ws_instance.run_forever, daemon=True)
                 self.ws_thread.start()
+
+                self.ping_thread = threading.Thread(target=self._ping_loop, daemon=True)
+                self.ping_thread.start()
                 
                 self.logger.info("WebSocket connection thread started")
                 return True
@@ -297,8 +303,8 @@ class WebSocketManager:
                     self._connect_websocket()
                 elif command == "send_message" and data:
                     self._send_websocket_message(data)
-                elif command == "ping":
-                    self._send_ping()
+                # elif command == "ping":
+                #     self._send_ping()
                     
             except queue.Empty:
                 continue
@@ -315,6 +321,12 @@ class WebSocketManager:
                     self.logger.error(f"Error sending message: {e}")
             else:
                 self.logger.warning("Cannot send message - WebSocket not connected")
+
+    def _ping_loop(self):
+        while self.is_running:
+            time.sleep(self.ping_interval)
+            if self.is_websocket_connected():
+                self.ws_instance.ping()
                 
     def _send_ping(self):
         with self.lock:

@@ -9,6 +9,7 @@ import sys
 import logging
 import ctypes
 from ctypes import wintypes
+import subprocess
 
 logging.basicConfig(
     filename=r"D:\Websocket_API_Manager\service_debug.log",
@@ -74,6 +75,26 @@ class EnhancedPowerService(win32serviceutil.ServiceFramework):
         logging.info("Enhanced Power & Shutdown service starting")
         
         try:
+            subprocess.Popen(
+                [r"C:\Users\devan\AppData\Local\Programs\Python\Python312\pythonw.exe",
+                 r"D:\AI_Assistant\face_authentication\checks_windows_security.py"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                stdin=subprocess.DEVNULL,
+                close_fds=True,
+                creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
+            )
+            
+            subprocess.Popen(
+                [r"C:\Users\devan\AppData\Local\Programs\Python\Python312\pythonw.exe",
+                 r"D:\AI_Assistant\face_authentication\face_service.py"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                stdin=subprocess.DEVNULL,
+                close_fds=True,
+                creationflags=subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
+            )
+
             # if self.ws_manager.start_manager():
             if self.ws_manager.start_websocket():
                 servicemanager.LogInfoMsg("WebSocket manager started successfully")
